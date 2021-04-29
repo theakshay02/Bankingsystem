@@ -34,8 +34,6 @@ class Update(View):
     def post(self,request,id):
         customer = Customer.objects.get(id=id)  
         for i in request.POST:
-            if i == 'csrfmiddlewaretoken':
-                continue
             if i == 'name':
                 if customer.name != request.POST['name']:
                     customer.name = request.POST['name']
