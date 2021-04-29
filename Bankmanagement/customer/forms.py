@@ -10,9 +10,9 @@ class CustomerForm(forms.ModelForm):
             ('No', False)
         )
         Loans_taken = (
-            ('Home', 'Home'), #Car
-            ('Vehicle', 'Vehicle'), #Bike
-            ('Gold', 'Gold'), #Cycle
+            ('Home', 'Home'), 
+            ('Vehicle', 'Vehicle'), 
+            ('Gold', 'Gold'), 
             ('None', 'None')
         )
 

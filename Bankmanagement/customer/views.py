@@ -3,27 +3,27 @@ from customer.forms import CustomerForm
 from customer.models import Customer  
 from django.views import View
 
-# Create your views here.  
+# Addcust your views here.  
 
 class Index(View):
     def get(self, request):
-        return redirect('/read')
+        return redirect('/display')
 
-class Create(View):
+class Addcust(View):
     def get(self, request):
         form = CustomerForm()  
-        return render(request,'create.html',{'form':form})  
+        return render(request,'addcust.html',{'form':form})  
 
     def post(self, request):
         form = CustomerForm(request.POST,request.FILES) 
         if form.is_valid():  
             form.save()  
-            return redirect('/read')  
+            return redirect('/display')  
             
-class Read(View):
+class Display(View):
     def get(self, request):
         customers = Customer.objects.all()  
-        return render(request,"read.html",{'customers':customers}) 
+        return render(request,"display.html",{'customers':customers}) 
 
 
 class Update(View):
@@ -71,7 +71,7 @@ class Update(View):
                 if request.FILES['cust_image'] != '':
                     customer.cust_image = request.FILES['cust_image']
         customer.save()
-        return redirect("/read")  
+        return redirect("/display")  
 
 
 
@@ -79,5 +79,5 @@ class Delete(View):
     def get(self,request,id):
         customer = Customer.objects.get(id=id)  
         customer.delete()  
-        return redirect("/read")      
+        return redirect("/display")      
 

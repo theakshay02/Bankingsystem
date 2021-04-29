@@ -2,15 +2,15 @@
 <html lang="en">  
 <head>  
     <meta charset="UTF-8">  
-    <title>Create</title>  
+    <title>Addcust</title>  
     {% load static %} 
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>   
     
 </head>  
 <body>  
-<form method="POST" class="post-form" action="/create" enctype="multipart/form-data">  
+<form method="POST" class="post-form" action="/addcust" enctype="multipart/form-data">  
         {% csrf_token %}  
-        <div class="container">  
+        <div>  
           <br>    
               <h3>Customer Details</h3>   
 
@@ -80,7 +80,7 @@
  
   
               <label>ADDRESS:</label>      
-              <div class="col-sm-4">  
+              <div>  
                   {{ form.Address }}
                   
               </div>
