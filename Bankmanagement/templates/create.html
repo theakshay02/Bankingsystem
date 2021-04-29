@@ -3,113 +3,100 @@
 <head>  
     <meta charset="UTF-8">  
     <title>Create</title>  
-    {% load static %}  
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>   
+    
 </head>  
-<body style="justify-content: center;">  
-
+<body>  
 <form method="POST" class="post-form" action="/create" enctype="multipart/form-data">  
         {% csrf_token %}  
         <div class="container">  
-          <br>  
-              <div class="form-group row">  
-              <label class="col-sm-1 col-form-label"></label>  
-              <div class="col-sm-4">  
-              <h3>Customer Details</h3>  
-              </div>  
-            </div>  
-              <div class="form-group row">  
-              <label class="col-sm-2 col-form-label">CUSTOMER ID:</label>  
-              <div class="col-sm-4">  
+          <br>    
+              <h3>Customer Details</h3>   
+
+              <label>CUSTOMER ID:</label>  
+              <div>  
                 {{ form.id }}  
               </div>  
-            </div>  
-            <div class="form-group row">  
-              <label class="col-sm-2 col-form-label">CUST. NAME:</label>  
-              <div class="col-sm-4">  
+             
+             
+              <label>CUST. NAME:</label>  
+              <div>  
                 {{ form.name }}  
               </div>  
-            </div>  
-              <div class="form-group row">  
-              <label class="col-sm-2 col-form-label">CUST. EMAIL:</label>  
-              <div class="col-sm-4">  
+              
+              <label>CUST. EMAIL:</label>  
+              <div>  
                 {{ form.email }}  
               </div>  
-            </div>  
-              <div class="form-group row">  
-              <label class="col-sm-2 col-form-label">PH. NO. :</label>  
-              <div class="col-sm-4">  
+ 
+              <label>PH. NO. :</label>  
+              <div>  
                 {{ form.phno }}  
               </div>  
-            </div>  
+ 
           
-              <div class="form-group row">  
-              <label class="col-sm-2 col-form-label">CARD TYPE:</label>      
-              <div class="col-sm-4">  
+
+              <label>CARD TYPE:</label>      
+              <div>  
                   {{ form.cardcompany }}  
               </div>
-            </div>    
-              <div class="form-group row">  
-              <label class="col-sm-2 col-form-label">PLATINUM CUSTOMER:</label>      
-              <div class="col-sm-4">  
+   
+
+              <label>PLATINUM CUSTOMER:</label>      
+              <div>  
                   {% for i in form.typeofCust %}
                   {{ i }}  
                   {% endfor %}
                   
               </div>
-            </div>    
-            <div class="form-group row">  
-              <label class="col-sm-2 col-form-label">AGE:</label>      
-              <div class="col-sm-4">  
+   
+  
+              <label>AGE:</label>      
+              <div>  
                   {{ form.age }}
               </div>
-            </div>    
+   
           
-            <div class="form-group row">  
-              <label class="col-sm-2 col-form-label">ACC. OPEN DATE:</label>      
-              <div class="col-sm-4">  
+
+              <label>ACC. OPEN DATE:</label>      
+              <div>  
                   {{ form.opening_date }}
               </div>
-            </div>    
-            <div class="form-group row">  
-              <label class="col-sm-2 col-form-label">BALANCE LEFT:</label>      
-              <div class="col-sm-4">  
+   
+
+              <label>BALANCE LEFT:</label>      
+              <div>  
                   {{ form.balance_left }}
-              </div>
-            </div>    
-              <div class="form-group row">  
-              <label class="col-sm-2 col-form-label">TYPE OF LOANS TAKEN:</label>      
-              <div class="col-sm-4">  
+              </div>   
+
+              <label>TYPE OF LOANS TAKEN:</label>      
+              <div>  
                   {% for i in form.Type_loans %}
                   {{ i }}
                   {% endfor %} 
                   
               </div>
-            </div>    
-            <div class="form-group row">  
-              <label class="col-sm-2 col-form-label">ADDRESS:</label>      
+ 
+  
+              <label>ADDRESS:</label>      
               <div class="col-sm-4">  
                   {{ form.Address }}
                   
               </div>
-            </div>  
-            <div class="form-group row">  
-              <label class="col-sm-2 col-form-label">PHOTO ID:</label>      
-              <div class="col-sm-4">  
+
+
+              <label>PHOTO ID:</label>      
+              <div>  
                   {{ form.cust_image }}
-                  
               </div>
-            </div>  
-          
-              <div class="form-group row">  
-              <label class="col-sm-1 col-form-label"></label>  
-              <div class="col-sm-4">  
-              <button type="submit" class="btn btn-primary">REGISTER</button>  
-              </div>  
-            </div>  
-              </div> 
+
+              <button type="submit">REGISTER</button>  
+  
+   
+          </div> 
 </form> 
+
  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>  

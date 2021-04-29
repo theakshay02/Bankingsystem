@@ -4,47 +4,45 @@
     <meta charset="UTF-8">  
     <title>Index</title>  
     {% load static %}  
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    
 </head>  
 <body>  
 <form method="POST" class="post-form" action="/update/{{customer.id}}"  enctype="multipart/form-data">  
         {% csrf_token %}  
     <div class="container">  
 <br>  
-    <div class="form-group row">  
-    <label class="col-sm-1 col-form-label"></label>  
-    <div class="col-sm-4">  
+ 
+    <div>  
     <h3>Update Customer Details</h3>  
     </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">CUSTOMER ID:</label>  
-    <div class="col-sm-4">  
+
+  
+    <label>CUSTOMER ID:</label>  
+    <div>  
         <input type="text" name="id" id="id_id" required maxlength="20" value="{{ customer.id }}" disabled/>  
     </div>  
-  </div>  
-  <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">CUST. NAME:</label>  
-    <div class="col-sm-4">  
+
+
+    <label>CUST. NAME:</label>  
+    <div>  
         <input type="text" name="name" id="id_name" required maxlength="100" value="{{ customer.name }}" />  
     </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">CUST. EMAIL:</label>  
-    <div class="col-sm-4">  
+ 
+   
+    <label>CUST. EMAIL:</label>  
+    <div>  
         <input type="email" name="email" id="id_email" required maxlength="254" value="{{ customer.email }}" />  
     </div>  
-  </div>  
-    <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">PH. NO.:</label>  
-    <div class="col-sm-4">  
+
+     
+    <label>PH. NO.:</label>  
+    <div>  
         <input type="number" name="phno" id="id_phno" required maxlength="15" value="{{ customer.phno }}" />  
     </div>  
-  </div>
-  <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">CARD TYPE:</label>  
-    <div class="col-sm-4">  
+
+ 
+    <label>CARD TYPE:</label>  
+    <div>  
       <select name="cardcompany" id="id_cardcompany" selected="{{customer.cardcompany}}">
         <option selected value="{{customer.cardcompany}}">
           
@@ -59,78 +57,65 @@
       
       </select>
     </div>  
-  </div>
+ 
 
-  <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">PLATINUM MEMBER:</label>  
-    <div class="col-sm-4">  
+  
+    <label>PLATINUM MEMBER:</label>  
+    <div>  
       <label for="id_typeofCust_0"><input type="radio" name="typeofCust" value="True" id="id_typeofCust_0">
         True</label>
       <label for="id_typeofCust_1"><input type="radio" name="typeofCust" value="False" id="id_typeofCust_1">
         False</label>
     </div>  
-  </div>
+
   
-  <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">AGE:</label>  
-    <div class="col-sm-4">  
+  
+    <label>AGE:</label>  
+    <div>  
       <input type="number" name="age" required id="id_age" value="{{ customer.age }}">
     </div>  
-  </div>
 
-  <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">ACC. OPEN DATE:</label>  
-    <div class="col-sm-4">  
+
+   
+    <label>ACC. OPEN DATE:</label>  
+    <div>  
       <input type="date" name="opening_date" class="form-control" id="id_opening_date" value="{{ customer.opening_date }}">
     </div>  
-  </div>
 
-  <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">BALANCE LEFT:</label>  
-    <div class="col-sm-4">  
+
+   
+    <label>BALANCE LEFT:</label>  
+    <div>  
       <input type="number" name="balance_left" step="any" required id="id_balance_left" value="{{ customer.balance_left }}">
     </div>  
-  </div>
 
-  <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">TYPES OF LOANS TAKEN:</label>  
-    <div class="col-sm-4">  
-      <label  for="id_Type_loans_0"><input type="checkbox" name="Type_loans" value="Home" id="id_Type_loans_0" >
- Home</label>
-      <label for="id_Type_loans_1"><input type="checkbox" name="Type_loans" value="Vehicle" id="id_Type_loans_1">
- Vehicle</label>
 
-<label for="id_Type_loans_2"><input type="checkbox" name="Type_loans" value="Gold" id="id_Type_loans_2">
- Gold</label>
-
- <label for="id_Type_loans_3"><input type="checkbox" name="Type_loans" value="None" id="id_Type_loans_3">
- None</label>
-
+ 
+    <label>TYPES OF LOANS TAKEN:</label>  
+    <div>  
+      <label  for="id_Type_loans_0"><input type="checkbox" name="Type_loans" value="Home" id="id_Type_loans_0" >Home</label>
+      <label for="id_Type_loans_1"><input type="checkbox" name="Type_loans" value="Vehicle" id="id_Type_loans_1">Vehicle</label>
+      <label for="id_Type_loans_2"><input type="checkbox" name="Type_loans" value="Gold" id="id_Type_loans_2">Gold</label>
+      <label for="id_Type_loans_3"><input type="checkbox" name="Type_loans" value="None" id="id_Type_loans_3">None</label>
     </div>  
-  </div>
 
-  <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">ADDRESS:</label>  
-    <div class="col-sm-4">  
+
+  
+    <label>ADDRESS:</label>  
+    <div>  
       <textarea name="Address" cols="30" rows="5" required id="id_bio">{{ customer.Address }}</textarea>
     </div>  
-  </div>
-  <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">PHOTO ID:</label>  
-    <div class="col-sm-4">  
+
+ 
+    <label>PHOTO ID:</label>  
+    <div>  
       <input type="file" name="cust_image" accept="image/*" id="id_cust_image" value="{{ customer.cust_image }}">
     </div>  
-  </div>
-
-
-    <div class="form-group row">  
-    <label class="col-sm-1 col-form-label"></label>  
-    <div class="col-sm-4">  
-    <button type="submit" class="btn btn-success">UPDATE</button>  
+  
+    <div>  
+    <button type="submit">UPDATE</button>  
     </div>  
-  </div>  
-    </div>  
+</div>  
+ 
 </form>  
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-</body>  
 </html>
