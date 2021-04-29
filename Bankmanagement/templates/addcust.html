@@ -5,7 +5,13 @@
     <title>Addcust</title>  
     {% load static %} 
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>   
-    
+    <style>
+        *{
+            margin-top:.2cm;
+            margin-bottom:.2cm;
+            margin-left:.2cm;
+        }
+    </style>
 </head>  
 <body>  
 <form method="POST" class="post-form" action="/addcust" enctype="multipart/form-data">  
