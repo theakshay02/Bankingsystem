@@ -20,6 +20,7 @@
     <thead>  
     <tr>  
         <th>CUSTOMER ID</th>  
+        <th>PHOTO ID</th>
         <th>CUST. Name</th>  
         <th>CUST. EMAIL</th>  
         <th>PH. NO.</th>  
@@ -30,14 +31,14 @@
         <th>BALANCE LEFT</th>
         <th>TYPES OF LOAN TAKEN</th>
         <th>ADDRESS</th>
-        <th>PHOTO ID</th>
         <th>EDIT/DEL</th>  
     </tr>  
     </thead>  
     <tbody>  
 {% for customer in customers %}  
     <tr>  
-        <td>{{ customer.id }}</td>  
+        <td>{{ customer.id }}</td> 
+        <td><img src="media/{{customer.cust_image}}" width=150 height=150></td>
         <td>{{ customer.name }}</td>  
         <td>{{ customer.email }}</td>  
         <td>{{ customer.phno }}</td>  
@@ -48,7 +49,7 @@
         <td>{{ customer.balance_left }}</td>  
         <td>{{ customer.Type_loans }}</td>  
         <td>{{ customer.Address }}</td>  
-        <td><img src="media/{{customer.cust_image}}" width=75 height=75></td>
+        
         <td>  
             <a href="/edit/{{ customer.id }}">Edit</span></a>  
             <a href="/delete/{{ customer.id }}">Delete</a>  
