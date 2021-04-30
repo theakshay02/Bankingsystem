@@ -30,7 +30,12 @@
               <div>  
                 {{ form.name }}  
               </div>  
-              
+
+              <label>PHOTO ID:</label>      
+              <div>  
+                  {{ form.cust_image }}
+              </div>
+
               <label>CUST. EMAIL:</label>  
               <div>  
                 {{ form.email }}  
@@ -41,8 +46,6 @@
                 {{ form.phno }}  
               </div>  
  
-          
-
               <label>CARD TYPE:</label>      
               <div>  
                   {{ form.cardcompany }}  
@@ -89,12 +92,6 @@
               <div>  
                   {{ form.Address }}
                   
-              </div>
-
-
-              <label>PHOTO ID:</label>      
-              <div>  
-                  {{ form.cust_image }}
               </div>
 
               <button type="submit">REGISTER</button>  

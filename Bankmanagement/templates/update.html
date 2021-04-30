@@ -34,7 +34,11 @@
     <div>  
         <input type="text" name="name" id="id_name" required maxlength="100" value="{{ customer.name }}" />  
     </div>  
- 
+
+    <label>PHOTO ID:</label>  
+    <div>  
+      <input type="file" name="cust_image" accept="image/*" id="id_cust_image" value="{{ customer.cust_image }}">
+    </div>  
    
     <label>CUST. EMAIL:</label>  
     <div>  
@@ -111,12 +115,6 @@
     <label>ADDRESS:</label>  
     <div>  
       <textarea name="Address" cols="30" rows="5" required id="id_bio">{{ customer.Address }}</textarea>
-    </div>  
-
- 
-    <label>PHOTO ID:</label>  
-    <div>  
-      <input type="file" name="cust_image" accept="image/*" id="id_cust_image" value="{{ customer.cust_image }}">
     </div>  
   
     <div>  
